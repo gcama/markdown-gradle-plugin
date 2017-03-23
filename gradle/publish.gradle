@@ -75,7 +75,9 @@ def pomConfig = {
     contributors {
         [
             madmas: 'Markus Schlichting',
-            iruiz : 'Ix-chel Ruiz'
+            iruiz : 'Ix-chel Ruiz',
+            simonpoole: 'Simon Poole',
+            gcama: 'Gyorgy Camaszotisz'
         ].each { devId, devName ->
             contributor {
                 name devName

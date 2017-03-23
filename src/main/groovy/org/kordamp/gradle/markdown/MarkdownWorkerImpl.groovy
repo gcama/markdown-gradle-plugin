@@ -27,6 +27,7 @@ class MarkdownWorkerImpl implements MarkdownWorker {
 
         String inputEncoding = options.inputEncoding ?: StandardCharsets.UTF_8.displayName()
         String outputEncoding = options.outputEncoding ?: StandardCharsets.UTF_8.displayName()
+        String outputExtension = options.outputExtension ?: conversion.targetExtension()
 
         outputDir.mkdirs()
 
@@ -38,7 +39,7 @@ class MarkdownWorkerImpl implements MarkdownWorker {
                 if (conversion.accept(file)) {
                     String input = file.getText(inputEncoding)
                     String output = conversion.convert(input, options, configuration)
-                    File target = new File("${destinationParentDir}/${stripFilenameExtension(file.name)}${conversion.targetExtension()}")
+                    File target = new File("${destinationParentDir}/${stripFilenameExtension(file.name)}${outputExtension}")
                     target.withWriter(outputEncoding) { w -> w.write(output) }
                 } else if (!conversion.dontCopy(file)){
                     File target = new File("${destinationParentDir}/${file.name}")

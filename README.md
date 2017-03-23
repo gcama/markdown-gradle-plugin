@@ -44,6 +44,7 @@ three properties as part of their configuration
  * configuration - a Map with further config tweaks. Explained in the next section.
  * inputEncoding - the file encoding used to read all files inside `sourceDir`.
  * outputEncoding - the file encoding used to write all files to `outputDir`.
+ * outputExtension - generate html files with a specific extension to accomodate frameworks like Tapestry. Type: String. Default: `.html`.
  
 Sources may have any of the following extensions in order to be discovered
 
